@@ -8,10 +8,11 @@ return {
 	},
 	config = function()
 		vim.keymap.set("n", "<C-e>", ":Neotree toggle<CR>", {})
+		vim.keymap.set("n", "<C-f>", ":Neotree buffers reveal float<CR>", {})
 
 		require("neo-tree").setup({
 			window = {
-				width = 52,
+				width = 50,
 			},
 			auto_clean_after_session_restore = true,
 			close_if_last_window = true,

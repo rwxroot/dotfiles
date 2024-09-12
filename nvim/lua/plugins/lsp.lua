@@ -9,7 +9,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "rust_analyzer", "pylsp", "tsserver", "typos_lsp", "lua_ls" },
+				ensure_installed = { "rust_analyzer", "pylsp", "ts_ls", "typos_lsp", "lua_ls" },
 			})
 		end,
 	},
@@ -104,7 +104,7 @@ return {
 					},
 				},
 			})
-			lspconfig.tsserver.setup({})
+			lspconfig.ts_ls.setup({})
 			lspconfig.typos_lsp.setup({})
 
 			vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
