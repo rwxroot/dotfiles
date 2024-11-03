@@ -86,7 +86,16 @@ return {
 					},
 				},
 			})
-			lspconfig.ts_ls.setup({})
+			lspconfig.ts_ls.setup({
+				settings = {
+					diagnostics = {
+						ignoredCodes = { 7016, 2307 },
+					},
+					implicitProjectConfiguration = {
+						checkJs = true,
+					},
+				},
+			})
 			lspconfig.typos_lsp.setup({})
 			lspconfig.eslint.setup({})
 
