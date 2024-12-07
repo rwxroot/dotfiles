@@ -2,9 +2,11 @@ return {
 	"akinsho/bufferline.nvim",
 	dependencies = "nvim-tree/nvim-web-devicons",
 	config = function()
-		vim.keymap.set("n", "<S-b>", ":BufferLinePick<CR>", {})
 		vim.keymap.set("n", "<S-h>", ":BufferLineCyclePrev<CR>", {})
 		vim.keymap.set("n", "<S-l>", ":BufferLineCycleNext<CR>", {})
+
+		vim.keymap.set("n", "<S-b>", ":BufferLinePick<CR>", {})
+		vim.keymap.set("n", "<C-c>", ":BufferLineCloseOthers<CR>", {})
 
 		require("bufferline").setup({
 			options = {

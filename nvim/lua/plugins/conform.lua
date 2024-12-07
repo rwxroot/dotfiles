@@ -17,6 +17,8 @@ return {
 				timeout_ms = 500,
 				lsp_format = "fallback",
 			},
+
+			vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {}),
 		})
 	end,
 }

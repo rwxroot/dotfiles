@@ -66,11 +66,8 @@ return {
 		config = function()
 			local lspconfig = require("lspconfig")
 
-			local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
 			lspconfig.lua_ls.setup({})
 			lspconfig.rust_analyzer.setup({
-				capabilities = capabilities,
 				on_attach = function(client, bufnr)
 					vim.lsp.inlay_hint.enable(true)
 				end,
