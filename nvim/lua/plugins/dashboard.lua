@@ -12,8 +12,9 @@ return {
 				week_header = {
 					enable = true,
 				},
-				shortcut = {},
 				footer = {},
+				shortcut = {},
+				project = { enable = false },
 			},
 		})
 	end,
