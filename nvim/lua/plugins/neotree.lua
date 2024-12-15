@@ -10,12 +10,11 @@ return {
 
 		require("neo-tree").setup({
 			window = {
-				width = 50,
+				width = 40,
 			},
 			auto_clean_after_session_restore = true,
 			close_if_last_window = true,
 			filesystem = {
-				hijack_netrw_behavior = "open_current",
 				follow_current_file = {
 					enabled = true,
 					leave_dirs_open = false,

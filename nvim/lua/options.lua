@@ -15,7 +15,6 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.o.relativenumber = true
 vim.o.clipboard = "unnamedplus"
-vim.o.colorcolumn = "90"
 
 vim.keymap.set("i", "jj", "<Esc>")
 vim.keymap.set("n", "<leader>sa", "ggVG")
