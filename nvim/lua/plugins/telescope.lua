@@ -22,8 +22,10 @@ return {
 				},
 			})
 
-			vim.keymap.set("n", "<leader>ff", require("telescope.builtin").find_files, { desc = "[F]ind [F]iles" })
-			vim.keymap.set("n", "<leader>fw", require("telescope.builtin").live_grep, { desc = "[F]ind [W]ords" })
+			local builtin = require("telescope.builtin")
+			vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find files" })
+			vim.keymap.set("n", "<leader>fw", builtin.live_grep, { desc = "Find words" })
+			vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Find buffers" })
 
 			require("telescope").load_extension("ui-select")
 		end,

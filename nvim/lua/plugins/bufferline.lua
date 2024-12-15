@@ -1,5 +1,6 @@
 return {
 	"akinsho/bufferline.nvim",
+	enabled = false,
 	dependencies = "nvim-tree/nvim-web-devicons",
 	config = function()
 		vim.keymap.set("n", "<S-h>", ":BufferLineCyclePrev<CR>", {})
@@ -25,6 +26,12 @@ return {
 						separator = false,
 					},
 				},
+				custom_filter = function(buf_number, buf_numbers)
+					print(vim.fn.bufname(buf_number))
+					if vim.fn.bufname(buf_number) ~= "<buffer-name-I-dont-want>" then
+						return true
+					end
+				end,
 			},
 		})
 	end,
