@@ -17,8 +17,10 @@ vim.o.relativenumber = true
 vim.o.clipboard = "unnamedplus"
 vim.o.colorcolumn = "90"
 
+vim.keymap.set("i", "jj", "<Esc>")
 vim.keymap.set("n", "<leader>sa", "ggVG")
 vim.keymap.set("n", "//", ":noh<return>")
+vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]])
 
 vim.keymap.set("n", "<left>", '<cmd>echo "Use h to move!!"<CR>')
 vim.keymap.set("n", "<right>", '<cmd>echo "Use l to move!!"<CR>')

@@ -5,12 +5,12 @@ return {
 			formatters_by_ft = {
 				lua = { "stylua" },
 				rust = { "rustfmt" },
-				javascript = { "prettier", stop_after_first = true },
-				typescript = { "prettier", stop_after_first = true },
+				javascript = { "prettierd", stop_after_first = true },
+				typescript = { "prettierd", stop_after_first = true },
 				yaml = { "yamlfmt" },
-				html = { "prettier" },
-				json = { "prettier" },
-				markdown = { "prettier" },
+				html = { "prettierd" },
+				json = { "prettierd" },
+				markdown = { "prettierd" },
 				sql = { "sqlfmt" },
 			},
 			format_after_save = {
