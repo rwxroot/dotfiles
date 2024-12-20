@@ -4,8 +4,10 @@ return {
 	lazy = false,
 	config = function()
 		require("onedark").setup({
-			style = "warmer", -- dark, darker, cool, deep, warm, warmer, light
+			-- dark, darker, cool, deep, warm, warmer, light
+			style = "warmer",
 		})
+
 		require("onedark").load()
 	end,
 }

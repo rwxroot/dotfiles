@@ -16,28 +16,29 @@ vim.api.nvim_create_autocmd("TermOpen", {
 	end,
 })
 
--- <space>tt spawns a new terminal
+-- Local variable for sending commands to a terminal
 local job_id = 0
+
+-- <space>tt spawns a new terminal, vertical split(left)
 vim.keymap.set("n", "<leader>tt", function()
 	vim.cmd.vnew()
 	vim.cmd.term()
-	vim.cmd.wincmd("J")
-	vim.api.nvim_win_set_height(0, 8)
+	vim.cmd.wincmd("L")
 
 	job_id = vim.bo.channel
 end)
 
--- <space>cb runs "cargo build" command in the spawned terminal
-vim.keymap.set("n", "<leader>cb", function()
-	vim.fn.chansend(job_id, { "cargo build\r\n" })
+-- <space>st spawns a new terminal, horizontal split(bottom) with a custom height
+vim.keymap.set("n", "<leader>st", function()
+	vim.cmd.vnew()
+	vim.cmd.term()
+	vim.cmd.wincmd("J")
+	vim.api.nvim_win_set_height(0, 10)
+
+	job_id = vim.bo.channel
 end)
 
--- <space>cb runs "cargo run" command in the spawned terminal
-vim.keymap.set("n", "<leader>cr", function()
+-- <space>rr "cargo run" command in the spawned terminal
+vim.keymap.set("n", "<leader>rr", function()
 	vim.fn.chansend(job_id, { "cargo run\r\n" })
-end)
-
--- <space>cb runs "cargo test" command in the spawned terminal
-vim.keymap.set("n", "<leader>ct", function()
-	vim.fn.chansend(job_id, { "cargo test\r\n" })
 end)

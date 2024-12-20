@@ -25,8 +25,8 @@ vim.o.undofile = true
 vim.o.ignorecase = true
 -- Overrides ignorecase if searc is in uppercase
 vim.o.smartcase = true
--- Highlights a column at 100 characters as a guide for long lines
-vim.o.colorcolumn = "100"
+-- Sync with system clipboard
+vim.o.clipboard = "unnamedplus"
 
 -- <space>sa selects everything
 vim.keymap.set("n", "<leader>sa", "ggVG")
@@ -40,10 +40,10 @@ vim.keymap.set("t", "jj", [[<C-\><C-n>]])
 vim.keymap.set("n", "<leader><leader>", "<c-^>")
 
 -- Disable arrow keys
-vim.keymap.set({ "n", "v", "i", "t" }, "<left>", '<cmd>echo "Use h to move!!"<CR>')
-vim.keymap.set({ "n", "v", "i", "t" }, "<right>", '<cmd>echo "Use l to move!!"<CR>')
-vim.keymap.set({ "n", "v", "i", "t" }, "<up>", '<cmd>echo "Use k to move!!"<CR>')
-vim.keymap.set({ "n", "v", "i", "t" }, "<down>", '<cmd>echo "Use j to move!!"<CR>')
+vim.keymap.set({ "n", "v", "i" }, "<left>", '<cmd>echo "Use h to move!!"<CR>')
+vim.keymap.set({ "n", "v", "i" }, "<right>", '<cmd>echo "Use l to move!!"<CR>')
+vim.keymap.set({ "n", "v", "i" }, "<up>", '<cmd>echo "Use k to move!!"<CR>')
+vim.keymap.set({ "n", "v", "i" }, "<down>", '<cmd>echo "Use j to move!!"<CR>')
 
 -- <C-(h,j,k,l)> switces between windows
 vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })

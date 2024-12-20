@@ -1,17 +1,23 @@
 return {
 	{
+		"notjedi/nvim-rooter.lua",
+		config = function()
+			require("nvim-rooter").setup()
+		end,
+	},
+	{
 		"nvim-neo-tree/neo-tree.nvim",
 		dependencies = {
+			"MunifTanjim/nui.nvim",
 			"nvim-lua/plenary.nvim",
 			"nvim-tree/nvim-web-devicons",
-			"MunifTanjim/nui.nvim",
 		},
 		config = function()
 			vim.keymap.set("n", "<C-e>", ":Neotree toggle<CR>", {})
 
 			require("neo-tree").setup({
 				window = {
-					width = 40,
+					width = 45,
 				},
 				auto_clean_after_session_restore = true,
 				close_if_last_window = true,
@@ -29,12 +35,6 @@ return {
 					},
 				},
 			})
-		end,
-	},
-	{
-		"notjedi/nvim-rooter.lua",
-		config = function()
-			require("nvim-rooter").setup()
 		end,
 	},
 }

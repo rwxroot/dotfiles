@@ -14,17 +14,19 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "rust_analyzer", "pylsp", "ts_ls", "typos_lsp", "lua_ls", "eslint" },
+				ensure_installed = { "rust_analyzer", "ts_ls", "typos_lsp", "lua_ls", "eslint" },
 			})
 		end,
 	},
 	{
 		"neovim/nvim-lspconfig",
+		dependencies = {
+			"saghen/blink.cmp",
+		},
 		config = function()
 			local lspconfig = require("lspconfig")
-			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+			local capabilities = require("blink.cmp").get_lsp_capabilities()
 
-			lspconfig.lua_ls.setup({})
 			lspconfig.rust_analyzer.setup({
 				capabilities = capabilities,
 				settings = {
@@ -39,18 +41,6 @@ return {
 					vim.lsp.inlay_hint.enable(true)
 				end,
 			})
-			lspconfig.pylsp.setup({
-				capabilities = capabilities,
-				settings = {
-					pylsp = {
-						plugins = {
-							pycodestyle = {
-								maxLineLength = 100,
-							},
-						},
-					},
-				},
-			})
 			lspconfig.ts_ls.setup({
 				capabilities = capabilities,
 				settings = {
@@ -62,12 +52,12 @@ return {
 					},
 				},
 			})
-			lspconfig.typos_lsp.setup({
+			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
 			})
-			lspconfig.eslint.setup({
-				capabilities = capabilities,
-			})
+
+			lspconfig.typos_lsp.setup({})
+			lspconfig.eslint.setup({})
 
 			vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
 			vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
