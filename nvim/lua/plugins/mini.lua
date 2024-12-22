@@ -7,5 +7,6 @@ return {
 		require("mini.jump2d").setup()
 		require("mini.starter").setup()
 		require("mini.indentscope").setup()
+		require("mini.trailspace").setup()
 	end,
 }
