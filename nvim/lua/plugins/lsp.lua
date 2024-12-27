@@ -31,16 +31,13 @@ return {
 				capabilities = capabilities,
 				settings = {
 					["rust-analyzer"] = {
-						cargo = {
-							allFeatures = true,
+						check = {
+							command = "clippy",
 						},
 					},
 				},
-
-				on_attach = function(client, bufnr)
-					vim.lsp.inlay_hint.enable(true)
-				end,
 			})
+
 			lspconfig.ts_ls.setup({
 				capabilities = capabilities,
 				settings = {
@@ -52,6 +49,7 @@ return {
 					},
 				},
 			})
+
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
 			})

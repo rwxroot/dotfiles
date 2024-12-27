@@ -28,6 +28,9 @@ vim.o.smartcase = true
 -- Sync with system clipboard
 vim.o.clipboard = "unnamedplus"
 
+-- Enable inlay_hint
+vim.lsp.inlay_hint.enable(true)
+
 -- <space>sa selects everything
 vim.keymap.set("n", "<leader>sa", "ggVG")
 vim.keymap.set("n", "//", ":noh<return>")
@@ -40,10 +43,10 @@ vim.keymap.set("t", "jj", [[<C-\><C-n>]])
 vim.keymap.set("n", "<leader><leader>", "<c-^>")
 
 -- Disable arrow keys
-vim.keymap.set({ "n", "v", "i" }, "<left>", '<cmd>echo "Use h to move!!"<CR>')
-vim.keymap.set({ "n", "v", "i" }, "<right>", '<cmd>echo "Use l to move!!"<CR>')
-vim.keymap.set({ "n", "v", "i" }, "<up>", '<cmd>echo "Use k to move!!"<CR>')
-vim.keymap.set({ "n", "v", "i" }, "<down>", '<cmd>echo "Use j to move!!"<CR>')
+vim.keymap.set({ "n", "v" }, "<left>", '<cmd>echo "Use h to move!!"<CR>')
+vim.keymap.set({ "n", "v" }, "<right>", '<cmd>echo "Use l to move!!"<CR>')
+vim.keymap.set({ "n", "v" }, "<up>", '<cmd>echo "Use k to move!!"<CR>')
+vim.keymap.set({ "n", "v" }, "<down>", '<cmd>echo "Use j to move!!"<CR>')
 
 -- <C-(h,j,k,l)> switces between windows
 vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
