@@ -7,7 +7,6 @@ return {
 		require("mini.jump2d").setup()
 		require("mini.trailspace").setup()
 		require("mini.surround").setup()
-		require("mini.cursorword").setup()
 		require("mini.bracketed").setup()
 		require("mini.starter").setup({
 			footer = "",

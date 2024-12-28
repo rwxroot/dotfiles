@@ -1,36 +1,3 @@
--- Set leader key
-vim.g.mapleader = " "
-
--- Disable netrw plugin
-vim.g.loaded_netrw = 0
-vim.g.loaded_netrwPlugin = 0
-
--- Enables mouse
-vim.o.mouse = "a"
--- Enables line number
-vim.o.number = true
--- Enables relative line number
-vim.o.relativenumber = true
--- Enables signcolumn(git changes)
-vim.o.signcolumn = "yes"
--- Tab/Shift width
-vim.o.tabstop = 4
-vim.o.shiftwidth = 4
--- Enables better colors
-vim.o.termguicolors = true
--- Enables undo files. Infinite undo!
--- Ends up in ~/.local/state/nvim/undo/
-vim.o.undofile = true
--- Enables case insensitive search/replace
-vim.o.ignorecase = true
--- Overrides ignorecase if searc is in uppercase
-vim.o.smartcase = true
--- Sync with system clipboard
-vim.o.clipboard = "unnamedplus"
-
--- Enable inlay_hint
-vim.lsp.inlay_hint.enable(true)
-
 -- <space>sa selects everything
 vim.keymap.set("n", "<leader>sa", "ggVG")
 vim.keymap.set("n", "//", ":noh<return>")
@@ -48,8 +15,24 @@ vim.keymap.set({ "n", "v" }, "<right>", '<cmd>echo "Use l to move!!"<CR>')
 vim.keymap.set({ "n", "v" }, "<up>", '<cmd>echo "Use k to move!!"<CR>')
 vim.keymap.set({ "n", "v" }, "<down>", '<cmd>echo "Use j to move!!"<CR>')
 
--- <C-(h,j,k,l)> switces between windows
+-- <C-(h,j,k,l)> switches between windows
 vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
 vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
+
+-- <leader>q delete all term buffers
+vim.keymap.set("n", "Q", function()
+	for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+		if vim.api.nvim_buf_get_option(buf, "buftype") == "terminal" then
+			vim.api.nvim_buf_delete(buf, { force = true })
+		end
+	end
+end)
+
+-- <leader>tt spawns a new terminal, vertical split(left)
+vim.keymap.set("n", "<leader>tt", function()
+	vim.cmd.vnew()
+	vim.cmd.term()
+	vim.cmd.wincmd("L")
+end)

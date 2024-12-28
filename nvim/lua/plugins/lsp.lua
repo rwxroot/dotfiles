@@ -14,7 +14,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "rust_analyzer", "ts_ls", "typos_lsp", "lua_ls", "eslint" },
+				ensure_installed = { "rust_analyzer", "ts_ls", "lua_ls", "eslint" },
 			})
 		end,
 	},
@@ -54,7 +54,6 @@ return {
 				capabilities = capabilities,
 			})
 
-			lspconfig.typos_lsp.setup({})
 			lspconfig.eslint.setup({})
 
 			vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
