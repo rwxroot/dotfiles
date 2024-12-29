@@ -35,8 +35,5 @@ size = 14
 [font.normal]
 family = "SauceCodePro Nerd Font"
 
-[scrolling]
-history = 0
-
 [window]
 decorations = "none"
