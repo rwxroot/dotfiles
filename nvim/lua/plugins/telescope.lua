@@ -20,6 +20,7 @@ return {
 		end, { desc = "Find files in home" })
 		vim.keymap.set("n", "<leader>fd", function()
 			builtin.find_files({
+				hidden = true,
 				cwd = os.getenv("MY_DOT_FILES"),
 			})
 		end, { desc = "Find dot files" })
