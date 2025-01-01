@@ -4,7 +4,6 @@ return {
 		require("conform").setup({
 			formatters_by_ft = {
 				lua = { "stylua" },
-				rust = { "rustfmt" },
 				javascript = { "prettierd", stop_after_first = true },
 				typescript = { "prettierd", stop_after_first = true },
 				html = { "prettierd" },
