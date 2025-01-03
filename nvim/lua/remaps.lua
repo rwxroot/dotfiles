@@ -9,6 +9,10 @@ vim.keymap.set("t", "jj", [[<C-\><C-n>]])
 -- <2xspace> toggles between buffers
 vim.keymap.set("n", "<space><space>", "<c-^>")
 
+-- <space>(j,k) to navigate quickfix list
+vim.keymap.set("n", "<space>j", "<cmd>cnext<CR>")
+vim.keymap.set("n", "<space>k", "<cmd>cprev<CR>")
+
 -- Disable arrow keys
 vim.keymap.set({ "n", "v" }, "<left>", '<cmd>echo "Use h to move!!"<CR>')
 vim.keymap.set({ "n", "v" }, "<right>", '<cmd>echo "Use l to move!!"<CR>')
