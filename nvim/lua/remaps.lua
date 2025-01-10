@@ -1,6 +1,5 @@
 -- <space>sa selects everything
 vim.keymap.set("n", "<space>sa", "ggVG")
-vim.keymap.set("n", "//", ":noh<return>")
 -- <Esc> exits out of terminal mode
 vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]])
 -- <jj> exits to insert mode
