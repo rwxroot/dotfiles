@@ -33,7 +33,7 @@ text = "#20201d"
 size = 10
 
 [font.normal]
-family = "SauceCodePro Nerd Font"
+family = "Hack Nerd Font"
 
 [window]
 decorations = "none"

@@ -14,7 +14,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "rust_analyzer", "typos_lsp", "lua_ls", "ts_ls" },
+				ensure_installed = { "rust_analyzer", "typos_lsp", "taplo", "lua_ls", "ts_ls" },
 			})
 		end,
 	},
@@ -54,6 +54,7 @@ return {
 				capabilities = capabilities,
 			})
 
+			lspconfig.taplo.setup({})
 			lspconfig.typos_lsp.setup({})
 
 			vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)

@@ -13,7 +13,7 @@ return {
 			"nvim-tree/nvim-web-devicons",
 		},
 		config = function()
-			vim.keymap.set("n", "<C-e>", ":Neotree toggle<CR>", {})
+			vim.keymap.set("n", "<C-e>", ":Neotree toggle position=right<CR>", {})
 
 			require("neo-tree").setup({
 				window = {
