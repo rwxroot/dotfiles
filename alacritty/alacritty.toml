@@ -33,7 +33,7 @@ text = "#20201d"
 size = 10
 
 [font.normal]
-family = "Hack Nerd Font"
+family = "CodeNewRoman Nerd Font"
 
 [window]
 decorations = "none"
