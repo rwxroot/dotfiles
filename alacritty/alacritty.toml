@@ -36,4 +36,4 @@ size = 10
 family = "CodeNewRoman Nerd Font"
 
 [window]
-decorations = "none"
+decorations = "None"
