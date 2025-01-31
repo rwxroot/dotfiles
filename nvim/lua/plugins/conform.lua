@@ -11,7 +11,7 @@ return {
 				markdown = { "prettierd" },
 			},
 			format_after_save = {
-				timeout_ms = 500,
+				timeout_ms = 50,
 				lsp_format = "fallback",
 			},
 
