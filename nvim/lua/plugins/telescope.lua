@@ -24,5 +24,11 @@ return {
 				cwd = os.getenv("MY_DOT_FILES"),
 			})
 		end, { desc = "Find config files" })
+		vim.keymap.set("n", "<leader>fn", function()
+			builtin.find_files({
+				hidden = true,
+				cwd = os.getenv("MY_NOTES"),
+			})
+		end, { desc = "Find notes" })
 	end,
 }

@@ -17,7 +17,7 @@ return {
 
 			require("neo-tree").setup({
 				window = {
-					width = 45,
+					width = 54,
 				},
 				auto_clean_after_session_restore = true,
 				close_if_last_window = true,

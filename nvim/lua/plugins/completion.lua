@@ -1,7 +1,7 @@
 return {
 	"saghen/blink.cmp",
 	dependencies = "rafamadriz/friendly-snippets",
-	version = "v0.*",
+	version = "*",
 	opts = {
 		keymap = { preset = "enter" },
 		appearance = {
@@ -10,7 +10,10 @@ return {
 		signature = { enabled = true },
 		sources = {
 			default = { "lsp", "path", "snippets", "buffer" },
-			cmdline = {},
 		},
+		cmdline = {
+			enabled = false
+		},
+
 	},
 }
