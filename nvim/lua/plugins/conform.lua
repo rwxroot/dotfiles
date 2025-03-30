@@ -4,6 +4,7 @@ return {
 		require("conform").setup({
 			formatters_by_ft = {
 				javascript = { "prettierd" },
+				typescript = { "prettierd" },
 				html = { "prettierd" },
 				json = { "prettierd" },
 				markdown = { "prettierd" },
