@@ -1,0 +1,19 @@
+[user]
+    name = rwxroot
+    email = rwxroot@proton.me
+    signingkey = C0793241A17F6B4C
+
+[commit]
+    gpgSign = true
+
+[init]
+    defaultBranch = main
+
+[pull]
+    rebase = true
+
+[submodule]
+    fetchJobs = 16
+
+[url "git@github.com:"]
+	insteadOf = https://github.com/
