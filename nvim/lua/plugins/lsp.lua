@@ -78,5 +78,26 @@ return {
 				}
 			)
 		end,
+	},
+	{
+		"stevearc/conform.nvim",
+		enabled = true,
+		event = { "BufReadPre", "BufNewFile" },
+		config = function()
+			require("conform").setup({
+				formatters_by_ft = {
+					javascript = { "prettierd" },
+					typescript = { "prettierd" },
+					html = { "prettierd" },
+					json = { "prettierd" },
+					markdown = { "prettierd" },
+				},
+				format_on_save = {
+					async = false,
+					timeout_ms = 50,
+					lsp_fallback = true,
+				},
+			})
+		end,
 	}
 }
