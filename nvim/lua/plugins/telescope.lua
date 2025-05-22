@@ -9,19 +9,6 @@ return {
 			pickers = {
 				find_files = {
 					hidden = false,
-					theme = "dropdown"
-				},
-				live_grep = {
-					theme = "dropdown"
-				},
-				buffers = {
-					theme = "dropdown"
-				},
-				git_commits = {
-					theme = "dropdown"
-				},
-				git_status = {
-					theme = "dropdown"
 				},
 			},
 			extensions = {

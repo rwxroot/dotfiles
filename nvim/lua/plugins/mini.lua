@@ -1,12 +1,14 @@
 return {
 	"echasnovski/mini.nvim",
 	config = function()
+		require("mini.ai").setup()
 		require("mini.move").setup()
 		require("mini.pairs").setup()
 		require("mini.jump2d").setup()
 		require("mini.comment").setup()
 		require("mini.bracketed").setup()
 		require("mini.trailspace").setup()
+		require("mini.indentscope").setup()
 		require("mini.starter").setup({
 			footer = "",
 			silent = true,

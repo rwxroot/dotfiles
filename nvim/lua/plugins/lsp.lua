@@ -1,17 +1,14 @@
 return {
 	{
 		"j-hui/fidget.nvim",
-		tag = "legacy",
-		opts = {},
+		opts = {}
 	},
 	{
-		"williamboman/mason.nvim",
-		config = function()
-			require("mason").setup()
-		end,
+		"mason-org/mason.nvim",
+		opts = {}
 	},
 	{
-		"williamboman/mason-lspconfig.nvim",
+		"mason-org/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
 				ensure_installed = { "rust_analyzer", "typos_lsp", "taplo", "lua_ls", "ts_ls" },
@@ -84,7 +81,9 @@ return {
 		enabled = true,
 		event = { "BufReadPre", "BufNewFile" },
 		config = function()
-			require("conform").setup({
+			local conform = require("conform")
+
+			conform.setup({
 				formatters_by_ft = {
 					javascript = { "prettierd" },
 					typescript = { "prettierd" },
@@ -92,12 +91,21 @@ return {
 					json = { "prettierd" },
 					markdown = { "prettierd" },
 				},
-				format_on_save = {
-					async = false,
-					timeout_ms = 50,
-					lsp_fallback = true,
-				},
 			})
+
+			vim.keymap.set({ "n", "v" }, "<leader>gf", function()
+				conform.format({
+					lsp_fallback = true,
+					async = false,
+					timeout_ms = 100,
+				})
+			end)
 		end,
+	},
+	{
+		"windwp/nvim-ts-autotag",
+		config = function()
+			require("nvim-ts-autotag").setup()
+		end
 	}
 }
