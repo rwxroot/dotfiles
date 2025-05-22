@@ -30,10 +30,10 @@ cursor = "#a6a28c"
 text = "#20201d"
 
 [font]
-size = 10
+size = 11
 
 [font.normal]
-family = "CodeNewRoman Nerd Font"
+family = "JetBrainsMono NF"
 
 [window]
 decorations = "None"
