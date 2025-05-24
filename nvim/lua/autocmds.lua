@@ -6,15 +6,5 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
--- Launch terminal window with no numbers
-vim.api.nvim_create_autocmd("TermOpen", {
-	desc = "Launch terminal window with no numbers",
-	group = vim.api.nvim_create_augroup("custom-term-open", { clear = true }),
-	callback = function()
-		vim.opt.number = false
-		vim.opt.relativenumber = false
-	end,
-})
-
 -- Diagnostic messages
 vim.diagnostic.config({ virtual_lines = { current_line = true } })

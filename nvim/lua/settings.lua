@@ -32,10 +32,5 @@ vim.o.smartcase = true
 -- Sync with system clipboard
 vim.o.clipboard = "unnamedplus"
 
--- Show a column at 80 characters as a guide for long lines
-vim.o.colorcolumn = "80"
---- Except in Rust where the rule is 100 characters
-vim.api.nvim_create_autocmd("Filetype", { pattern = "rust", command = "set colorcolumn=100" })
-
 -- Enable inlay_hint
 vim.lsp.inlay_hint.enable(true)

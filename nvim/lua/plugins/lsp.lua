@@ -52,6 +52,11 @@ return {
 			vim.keymap.set("n", "K", vim.lsp.buf.hover)
 			vim.keymap.set("n", "gD", vim.lsp.buf.declaration)
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition)
+			vim.keymap.set("n", "<space>gd", function()
+				vim.cmd("vsplit")
+				vim.cmd("wincmd l")
+				vim.lsp.buf.definition()
+			end)
 			vim.keymap.set("n", "grr", vim.lsp.buf.references)
 			vim.keymap.set("n", "gi", vim.lsp.buf.implementation)
 			vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help)
@@ -97,7 +102,7 @@ return {
 				conform.format({
 					lsp_fallback = true,
 					async = false,
-					timeout_ms = 100,
+					timeout_ms = 500,
 				})
 			end)
 		end,
