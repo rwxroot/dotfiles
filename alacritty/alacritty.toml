@@ -30,7 +30,7 @@ cursor = "#a6a28c"
 text = "#20201d"
 
 [font]
-size = 11
+size = 9
 
 [font.normal]
 family = "JetBrainsMono NF"
