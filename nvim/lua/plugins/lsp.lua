@@ -18,27 +18,19 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-			local lspconfig = require("lspconfig")
-			local capabilities = require("blink.cmp").get_lsp_capabilities()
-
-			lspconfig.lua_ls.setup({})
-			lspconfig.taplo.setup({})
-			lspconfig.typos_lsp.setup({})
-			lspconfig.lua_ls.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.rust_analyzer.setup({
-				capabilities = capabilities,
+			vim.lsp.enable('lua_ls')
+			vim.lsp.enable('taplo')
+			vim.lsp.enable('typos_lsp')
+			vim.lsp.config('rust_analyzer', {
 				settings = {
-					["rust-analyzer"] = {
+					['rust-analyzer'] = {
 						check = {
 							command = "clippy",
 						},
 					},
 				},
 			})
-			lspconfig.ts_ls.setup({
-				capabilities = capabilities,
+			vim.lsp.config('ts_ls', {
 				settings = {
 					diagnostics = {
 						ignoredCodes = { 7016, 2307 },
@@ -48,6 +40,7 @@ return {
 					},
 				},
 			})
+
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover)
 			vim.keymap.set("n", "gD", vim.lsp.buf.declaration)
@@ -96,6 +89,11 @@ return {
 					json = { "prettierd" },
 					markdown = { "prettierd" },
 				},
+				-- format_on_save = {
+				-- 	async = false,
+				-- 	timeout_ms = 500,
+				-- 	lsp_fallback = true,
+				-- },
 			})
 
 			vim.keymap.set({ "n", "v" }, "<leader>gf", function()

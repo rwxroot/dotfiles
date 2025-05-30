@@ -6,6 +6,16 @@ return {
 	},
 	config = function()
 		require("telescope").setup({
+			defaults = {
+				layout_strategy = "horizontal",
+				layout_config = {
+					horizontal = {
+						width = { padding = 0 },
+						height = { padding = 0 },
+						preview_width = 0.5,
+					},
+				},
+			},
 			pickers = {
 				find_files = {
 					hidden = false,
@@ -26,7 +36,7 @@ return {
 		vim.keymap.set("n", "<leader>gg", builtin.git_status, { desc = "Git status" })
 		vim.keymap.set("n", "<leader>fd", function()
 			builtin.find_files({
-				hidden = true,
+				hidden = false,
 				cwd = os.getenv("DOTFILES"),
 			})
 		end, { desc = "Find config files" })
