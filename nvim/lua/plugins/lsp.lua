@@ -33,7 +33,7 @@ return {
 			vim.lsp.config('ts_ls', {
 				settings = {
 					diagnostics = {
-						ignoredCodes = { 7016, 2307 },
+						ignoredCodes = { 7016, 2307, 7044 },
 					},
 					implicitProjectConfiguration = {
 						checkJs = true,
@@ -89,11 +89,11 @@ return {
 					json = { "prettierd" },
 					markdown = { "prettierd" },
 				},
-				-- format_on_save = {
-				-- 	async = false,
-				-- 	timeout_ms = 500,
-				-- 	lsp_fallback = true,
-				-- },
+				format_on_save = {
+					async = false,
+					timeout_ms = 500,
+					lsp_fallback = true,
+				},
 			})
 
 			vim.keymap.set({ "n", "v" }, "<leader>gf", function()
