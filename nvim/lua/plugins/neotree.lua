@@ -1,11 +1,5 @@
 return {
 	{
-		"notjedi/nvim-rooter.lua",
-		config = function()
-			require("nvim-rooter").setup()
-		end,
-	},
-	{
 		"nvim-neo-tree/neo-tree.nvim",
 		dependencies = {
 			"MunifTanjim/nui.nvim",
@@ -13,6 +7,8 @@ return {
 			"nvim-tree/nvim-web-devicons",
 		},
 		config = function()
+			vim.keymap.set("n", "<C-e>", ":Neotree toggle position=left<CR>", {})
+
 			require("neo-tree").setup({
 				window = {
 					width = 40,
