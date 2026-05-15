@@ -1,5 +1,8 @@
+[core]
+	sshCommand = ssh -i ~/.ssh/github
+
 [user]
-    name = rwxroot
+    name = SM
     email = rwxroot@proton.me
     signingkey = C0793241A17F6B4C
 

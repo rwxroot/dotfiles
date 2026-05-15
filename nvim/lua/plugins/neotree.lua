@@ -6,9 +6,11 @@ return {
 			"nvim-lua/plenary.nvim",
 			"nvim-tree/nvim-web-devicons",
 		},
+		cmd = "Neotree",
+		keys = {
+			{ "<C-e>", "<cmd>Neotree toggle position=left reveal=false<CR>", desc = "Toggle Neo-tree" },
+		},
 		config = function()
-			vim.keymap.set("n", "<C-e>", ":Neotree toggle position=left<CR>", {})
-
 			require("neo-tree").setup({
 				window = {
 					width = 40,

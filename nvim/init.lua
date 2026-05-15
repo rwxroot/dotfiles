@@ -18,3 +18,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins", { rocks = { enabled = false }, change_detection = { notify = false } })
+
+-- Neutralize markdown injection query until the upstream 0.12 bug is fixed.
+vim.treesitter.query.set("markdown", "injections", "")

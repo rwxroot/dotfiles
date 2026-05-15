@@ -42,12 +42,7 @@ return {
 			vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Find buffers" })
 			vim.keymap.set("n", "<leader>gc", builtin.git_commits, { desc = "Git commits" })
 			vim.keymap.set("n", "<leader>gg", builtin.git_status, { desc = "Git status" })
-			vim.keymap.set("n", "<leader>fd", function()
-				builtin.find_files({
-					hidden = false,
-					cwd = os.getenv("DOTFILES"),
-				})
-			end, { desc = "Find config files" })
+			vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "LSP diagnostics" })
 		end,
 	}
 }

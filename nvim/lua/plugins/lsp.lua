@@ -21,6 +21,7 @@ return {
 			vim.lsp.enable('lua_ls')
 			vim.lsp.enable('taplo')
 			vim.lsp.enable('typos_lsp')
+			vim.lsp.enable('bashls')
 			vim.lsp.config('rust_analyzer', {
 				settings = {
 					['rust-analyzer'] = {
@@ -87,12 +88,13 @@ return {
 					html = { "prettierd" },
 					json = { "prettierd" },
 					markdown = { "prettierd" },
+					sh = { "shfmt" },
 				},
-				format_on_save = {
-					async = false,
-					timeout_ms = 500,
-					lsp_fallback = true,
-				},
+				-- format_on_save = {
+				-- 	async = false,
+				-- 	timeout_ms = 500,
+				-- 	lsp_fallback = true,
+				-- },
 			})
 
 			vim.keymap.set({ "n", "v" }, "<leader>gf", function()

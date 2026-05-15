@@ -1,3 +1,21 @@
+[font]
+size = 9
+
+[font.normal]
+family = "JetBrainsMono NF"
+
+[cursor.style]
+shape = "Beam"
+
+[colors.cursor]
+cursor = "#a6a28c"
+text = "#20201d"
+
+[window]
+decorations = "None"
+dynamic_padding = true
+padding = { x = 3, y = 3 }
+
 [colors.primary]
 background = "#232326"
 foreground = "#BABABA"
@@ -22,18 +40,5 @@ magenta = "#957BBE"
 cyan = "#3D97E2"
 white = "#BABABA"
 
-[cursor.style]
-shape = "Beam"
-
-[colors.cursor]
-cursor = "#a6a28c"
-text = "#20201d"
-
-[font]
-size = 9
-
-[font.normal]
-family = "JetBrainsMono NF"
-
-[window]
-decorations = "None"
+[keyboard]
+bindings = [{ key = "N", mods = "Control|Shift", action = "CreateNewWindow" }]
