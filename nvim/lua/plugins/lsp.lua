@@ -11,7 +11,7 @@ return {
 		"mason-org/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "rust_analyzer", "typos_lsp", "taplo", "lua_ls", "ts_ls" },
+				ensure_installed = { "rust_analyzer", "typos_lsp", "taplo", "lua_ls" },
 			})
 		end,
 	},
@@ -31,17 +31,6 @@ return {
 					},
 				},
 			})
-			vim.lsp.config('ts_ls', {
-				settings = {
-					diagnostics = {
-						ignoredCodes = { 7016, 2307, 7044 },
-					},
-					implicitProjectConfiguration = {
-						checkJs = true,
-					},
-				},
-			})
-
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover)
 			vim.keymap.set("n", "gD", vim.lsp.buf.declaration)
@@ -90,11 +79,11 @@ return {
 					markdown = { "prettierd" },
 					sh = { "shfmt" },
 				},
-				-- format_on_save = {
-				-- 	async = false,
-				-- 	timeout_ms = 500,
-				-- 	lsp_fallback = true,
-				-- },
+				format_on_save = {
+					async = false,
+					timeout_ms = 500,
+					lsp_fallback = true,
+				},
 			})
 
 			vim.keymap.set({ "n", "v" }, "<leader>gf", function()

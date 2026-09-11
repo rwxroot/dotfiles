@@ -2,7 +2,7 @@
 	sshCommand = ssh -i ~/.ssh/github
 
 [user]
-    name = SM
+    name = Sachin Malik
     email = rwxroot@proton.me
     signingkey = C0793241A17F6B4C
 

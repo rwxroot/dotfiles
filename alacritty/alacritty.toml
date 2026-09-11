@@ -7,17 +7,13 @@ family = "JetBrainsMono NF"
 [cursor.style]
 shape = "Beam"
 
-[colors.cursor]
-cursor = "#a6a28c"
-text = "#20201d"
-
 [window]
 decorations = "None"
 dynamic_padding = true
 padding = { x = 3, y = 3 }
 
 [colors.primary]
-background = "#232326"
+background = "#1D1D20"
 foreground = "#BABABA"
 
 [colors.normal]
@@ -25,9 +21,9 @@ black = "#000000"
 red = "#E05A4F"
 green = "#68C256"
 yellow = "#DCCD51"
-blue = "#1C98E8"
+blue = "#2387D9"
 magenta = "#8E69C9"
-cyan = "#1C98E8"
+cyan = "#2387D9"
 white = "#BABABA"
 
 [colors.bright]
@@ -35,10 +31,11 @@ black = "#666666"
 red = "#E05A4F"
 green = "#77B869"
 yellow = "#EFD64B"
-blue = "#387CD3"
+blue = "#4AA3E8"
 magenta = "#957BBE"
-cyan = "#3D97E2"
+cyan = "#4AA3E8"
 white = "#BABABA"
 
-[keyboard]
-bindings = [{ key = "N", mods = "Control|Shift", action = "CreateNewWindow" }]
+[colors.cursor]
+cursor = "#a6a28c"
+text = "#20201d"
